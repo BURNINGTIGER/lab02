@@ -11,16 +11,20 @@
 ## Tutorial
 
 ```bash
+//создание переменных
 $ export GITHUB_USERNAME=BURNINGTIGER
 $ export GIST_TOKEN=6a6ab9f164a7c4ca35e7d23be4abefba869af818
+//выбор текстового редактора
 $ alias edit=vim
 ```
 
 ```bash
+//установка gitsup
 $ npm install -g gistup
 ```
 
 ```bash
+//сохранение токена в файл
 $ cat > ~/.gistup.json <<EOF
 {
   "token": "${GIST_TOKEN}"
@@ -29,6 +33,7 @@ EOF
 ```
 
 ```bash
+//создание новых директорий
 $ cd ~
 $ mkdir -p workspace/labs/projects/
 $ mkdir -p workspace/labs/tasks/
@@ -38,12 +43,19 @@ $ mkdir -p workspace/labs/reports/
 ## Report
 
 ```bash
+//переход в /workspace/labs/
 $ cd ~/workspace/labs/
+//создание переменной
 $ export LAB_NUMBER=02
+//клонирование
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+//создание новой директории
 $ mkdir reports/lab${LAB_NUMBER}
+//копирования файлов
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+//переход в reports/lab02
 $ cd reports/lab${LAB_NUMBER}
+//редактирование файла
 $ edit REPORT.md
 $ gistup -m "lab${LAB_NUMBER}"
 ```
